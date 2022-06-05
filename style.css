@@ -1,0 +1,156 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+  --first-color: hsl(38, 69%, 59%);
+  --text-color: hsl(38, 8%, 8%);
+  --body-font: "Space Grotesk", sans-serif;
+  --biggest-font-size: 2.375rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  outline: none;
+  font-family: var(--body-font);
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--first-color);
+  height: 100vh;
+}
+
+nav {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  width: 90%;
+  color: var(--text-color);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 30%;
+}
+
+.nav-close {
+  display: none;
+}
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  height: 80vh;
+  flex-direction: column;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7rem;
+}
+
+.home-data {
+  text-align: center;
+}
+
+.home-title {
+  font-size: var(--biggest-font-size);
+  margin: 0.75rem 0;
+}
+
+.home-button {
+  margin-top: 2rem;
+  display: inline-block;
+  background-color: var(--text-color);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 3rem;
+  transition: 0.4s;
+}
+
+.home-button:hover {
+  box-shadow: 0 4px 12px hsla(38, 69%, 8%, 0.2);
+}
+
+.home-img img {
+  width: 20rem;
+  animation: floaty 1.8s infinite alternate;
+}
+
+.home-shadow {
+  width: 130px;
+  height: 24px;
+  background-color: hsla(38, 21%, 19%, 0.16);
+  margin: 0 auto;
+  border-radius: 50%;
+  filter: blur(7px);
+  animation: shadow 1.8s infinite alternate;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5rem;
+  font-size: var(--smaller-font-size);
+}
+
+/* Animate ghost */
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.85, 0.85);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-menu {
+    display: none;
+    position: fixed;
+    right: 1rem;
+    flex-direction: column;
+    top: 3rem;
+    width: 50%;
+    height: 10rem;
+  }
+  .active {
+    display: flex;
+  }
+
+  .nav-close {
+    display: block;
+  }
+
+  .home-container {
+    gap: 4rem;
+  }
+}
